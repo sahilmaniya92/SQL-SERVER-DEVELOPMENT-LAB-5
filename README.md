@@ -1,128 +1,63 @@
-# SQL Server Development — Simulation 4-5
-## Production Quality Inspection Processing System
+# Lab 5 — Production Quality Inspection Processing System
 
 **Course:** SQL Server Developer  
-**Project:** Simulation 4-5 (Lab 4 + Lab 5 — one joined project)  
+**Lab:** Lab 5 — T-SQL Control Flow & Data Structures  
 **Database:** AdventureWorks2022  
 **Schema:** ProductionOps  
-**Timeline:** 14 Days  
+**Timeline:** 7 Days  
 
 **GitHub Repository:** [SQL-SERVER-DEVELOPMENT-LAB-5](https://github.com/sahilmaniya92/SQL-SERVER-DEVELOPMENT-LAB-5)
 
 ---
 
-## Create Project Repo (Repo Owner — Sahil)
-
-Follow these steps once to create the team GitHub repo with the **full project structure** (not just the Lab5 folder).
-
-### Step 1 — Log in to GitHub
-
-```powershell
-gh auth login
-```
-
-Choose: GitHub.com → HTTPS → Login with a web browser → paste device code.
-
-### Step 2 — Create repo folder locally
-
-Your repo root should match this layout. Run from your project folder:
-
-```powershell
-cd "c:\Users\Admin\Downloads\New folder (2)\Lab5"
-.\setup_github.ps1
-```
-
-Or manually:
-
-```powershell
-cd "c:\Users\Admin\Downloads\New folder (2)\Lab5"
-git init
-git branch -M main
-git remote add origin https://github.com/sahilmaniya92/SQL-SERVER-DEVELOPMENT-LAB-5.git
-git add .
-git commit -m "Initial commit: Simulation 4-5 project structure and team docs"
-git push -u origin main
-```
-
-If GitHub already has files (e.g. a README):
-
-```powershell
-git pull origin main --rebase --allow-unrelated-histories
-git push -u origin main
-```
-
-### Step 3 — Add teammates
-
-Open: https://github.com/sahilmaniya92/SQL-SERVER-DEVELOPMENT-LAB-5/settings/access
-
-- Click **Add people**
-- Enter each teammate's GitHub username
-- Role: **Write**
-- Add your **instructor** before final submission
-
-### Step 4 — Share clone link with team
-
-```
-https://github.com/sahilmaniya92/SQL-SERVER-DEVELOPMENT-LAB-5.git
-```
-
----
-
 ## Team Members
 
-| # | Name | Role | Tasks Owned | Total Hrs | Student No. |
-|---|------|------|-------------|-----------|-------------|
-| 1 | Hassana | Schema & Foundation Lead | L4-T1, L4-T2, L5-T10 | 20 | _TBD_ |
-| 2 | Sahashri | Report & Batch Developer | L4-T10, L5-T6 | 12 | _TBD_ |
-| 3 | Brain | UDF & Control Flow Developer | L4-T3, L5-T3, L5-T4 | 6 | _TBD_ |
-| 4 | Parth | Stored Proc & Error Handling | L4-T5, L5-T5 | 11 | _TBD_ |
-| 5 | Josovo | Views & Analytics Developer | L4-T6, L4-T7, L5 support | 6 | _TBD_ |
-| 6 | Lien | TVF & Table Developer | L4-T4, L5-T12 | 6 | _TBD_ |
-| 7 | Kelvin | Window Reports & Notification | L4-T8, L5-T7, L5-T13 | 6 | _TBD_ |
-| 8 | Dhruv | Subquery & Cursor Developer | L4-T9, L5-T11 | 11 | _TBD_ |
-| 9 | Sahil | Final Deployment (**LAST**) | L4-T12–14, L5-T14 | 11 | _TBD_ |
+| # | Name | Role | Lab Task(s) | Hours | Student No. |
+|---|------|------|-------------|-------|-------------|
+| 1 | Hassana | Schema & Failed Queue Developer | Task 1, Task 10 | 14 | _TBD_ |
+| 2 | Sahashri | Inspection & Temp Batch Developer | Task 2, Task 6 | 7 | _TBD_ |
+| 3 | Brain | Control Flow Developer | Task 3, Task 4 | 4 | _TBD_ |
+| 4 | Parth | Error Handling Developer | Task 5 | 7 | _TBD_ |
+| 5 | Josovo | Reporting & Views Developer | Task 8, Task 9 | 4 | _TBD_ |
+| 6 | Lien | Release Review Table Developer | Task 12 | 4 | _TBD_ |
+| 7 | Kelvin | Categories & Notification Developer | Task 7, Task 13 | 4 | _TBD_ |
+| 8 | Dhruv | Failed Review Cursor Developer | Task 11 | 7 | _TBD_ |
+| 9 | Sahil | Deployment & Final Submission (**LAST**) | Task 14 | 7 | _TBD_ |
 
-> Each task is owned by **one person only**. Sahil owns the **LAST task** (final deploy + submission).  
-> Task codes explained in `TEAM_PROJECT_PLAN.md` (Simulation4-5 folder).
+> Each task is owned by **one person only**. Sahil owns the **LAST task** (Task 14 + final submission).
 
 ---
 
-## Repository Structure (Project Root)
-
-When anyone clones the repo, this is what they get:
+## Repository Structure
 
 ```
 SQL-SERVER-DEVELOPMENT-LAB-5/
 │
 ├── scripts/
-│   ├── setup/                  ← Hassana (L4-T1)
-│   ├── tables/                 ← Hassana, Parth, Lien, Kelvin
-│   ├── functions/              ← Brain, Lien
-│   ├── procedures/             ← Parth
-│   ├── views/                  ← Josovo
-│   ├── reporting/              ← Josovo, Sahashri, Kelvin, Dhruv
-│   ├── controlflow/            ← Brain
-│   ├── errorhandling/          ← Parth
+│   ├── setup/                  ← Hassana (Task 1)
+│   ├── tables/                 ← Hassana, Sahashri, Parth, Lien, Kelvin
+│   ├── controlflow/            ← Brain (Task 3, 4)
+│   ├── errorhandling/          ← Parth (Task 5)
 │   ├── temporary_objects/      ← Sahashri, Kelvin
+│   ├── reporting/              ← Josovo (Task 8, 9)
 │   ├── cursors/                ← Dhruv, Kelvin
 │   ├── deployment/             ← Sahil (LAST)
 │   └── validation/             ← Sahil (LAST)
 │
-├── screenshots/                ← GitHub repo folder (see Screenshot Ownership below)
-│   ├── Hassana/                ← screenshots #1–3
-│   ├── Sahashri/               ← screenshots #4–5
-│   ├── Brain/                  ← screenshots #6–8
-│   ├── Parth/                  ← screenshots #9–10
-│   ├── Josovo/                 ← screenshots #11–12
-│   ├── Lien/                   ← screenshots #13–14
-│   ├── Kelvin/                 ← screenshots #15–17
-│   ├── Dhruv/                  ← screenshots #18–20
-│   └── Sahil/                  ← screenshots #21–22 + final compile
+├── screenshots/
+│   ├── Hassana/                ← screenshots #1–2
+│   ├── Sahashri/               ← screenshots #3–4
+│   ├── Brain/                  ← screenshots #5–6
+│   ├── Parth/                  ← screenshot #7
+│   ├── Josovo/                 ← screenshots #8–9
+│   ├── Lien/                   ← screenshot #10
+│   ├── Kelvin/                 ← screenshots #11–12
+│   ├── Dhruv/                  ← screenshots #13–14
+│   └── Sahil/                  ← screenshot #15 + final compile
 │
-├── README.md                   ← this file
-├── CONTRIBUTING.md             ← who pushes which file
+├── README.md
+├── CONTRIBUTING.md
 ├── TEAM_PROJECT_PLAN.md
-├── work_allocated.md
 └── TEAM_WORK_ALLOCATION.xlsx
 ```
 
@@ -132,116 +67,50 @@ SQL-SERVER-DEVELOPMENT-LAB-5/
 
 | Member | Task | Script File | Folder |
 |--------|------|-------------|--------|
-| **Hassana** | L4-T1 | `initialize_productionops_schema.sql` | `scripts/setup/` |
-| | L4-T2 | `inspection_request_registration.sql` | `scripts/tables/` |
-| | L5-T10 | `failed_inspection_queue.sql` | `scripts/tables/` |
-| **Sahashri** | L4-T10 | `inspection_product_detail_report.sql` | `scripts/reporting/` |
-| | L5-T6 | `inspection_batch_processing.sql` | `scripts/temporary_objects/` |
-| **Brain** | L4-T3 | `fn_InspectionScoreClass.sql` | `scripts/functions/` |
-| | L5-T3 | `inspection_result_classification.sql` | `scripts/controlflow/` |
-| | L5-T4 | `monthly_inspection_schedule.sql` | `scripts/controlflow/` |
-| **Parth** | L4-T5 | `usp_GetInspectionRequests.sql` | `scripts/procedures/` |
-| | L5-T5 | `error_log.sql` | `scripts/tables/` |
-| | L5-T5 | `inspection_error_logging.sql` | `scripts/errorhandling/` |
-| **Josovo** | L4-T6 | `vProductInspectionSummary.sql` | `scripts/views/` |
-| | L4-T6 | `vw_PendingInspections.sql` | `scripts/views/` |
-| | L4-T7 | `product_quality_statistics.sql` | `scripts/reporting/` |
-| **Lien** | L4-T4 | `fn_GetProductInspectionData.sql` | `scripts/functions/` |
-| | L5-T12 | `product_release_review.sql` | `scripts/tables/` |
-| **Kelvin** | L4-T8 | `product_ranking_report.sql` | `scripts/reporting/` |
-| | L5-T7 | `inspection_category_management.sql` | `scripts/temporary_objects/` |
-| | L5-T13 | `notification_log.sql` | `scripts/cursors/` |
-| | L5-T13 | `inspection_notification_cursor.sql` | `scripts/cursors/` |
-| **Dhruv** | L4-T9 | `products_below_safety_stock_report.sql` | `scripts/reporting/` |
-| | L5-T11 | `failed_product_review_cursor.sql` | `scripts/cursors/` |
-| **Sahil (LAST)** | L4-T12 | `deploy_lab4.sql` | `scripts/deployment/` |
-| | L4-T13 | `validate_lab4_results.sql` | `scripts/validation/` |
-| | L5-T14 | `deploy_all.sql` | `scripts/deployment/` |
-| | L5-T14 | `validate_lab5_results.sql` | `scripts/validation/` |
-| | L5-T14 | README, screenshots, submit | `README.md` · `screenshots/` |
-
-Each folder has an `OWNER.txt` file showing who owns which scripts.
-
----
-
-## How Team Members Push Their Part
-
-```powershell
-git clone https://github.com/sahilmaniya92/SQL-SERVER-DEVELOPMENT-LAB-5.git
-cd SQL-SERVER-DEVELOPMENT-LAB-5
-git checkout -b feature/yourname-task
-```
-
-Add your script in the correct folder, then:
-
-```powershell
-git add scripts/your-folder/your-script.sql
-git commit -m "L4-T1: add schema script (Hassana)"
-git push -u origin feature/yourname-task
-```
-
-Open a **Pull Request** on GitHub → Sahil merges to `main`.
-
-### Push order (dependencies)
-
-| Day | Who pushes first |
-|-----|------------------|
-| 1 | **Hassana** — L4-T1, L4-T2 (blocks everyone) |
-| 2 | Brain, Parth, Josovo, Lien — L4-T3–T7 |
-| 3 | Kelvin, Dhruv, Sahashri — L4-T8–T10 |
-| 4 | **Sahil** — L4-T12–14 mid deploy |
-| 6 | Hassana, Sahashri, Lien — L5-T10, T6, T12 |
-| 7 | Brain, Parth, Kelvin — L5-T3–T5, T7 |
-| 9 | **Dhruv** L5-T11, then **Kelvin** L5-T13 |
-| 11–12 | **Sahil** — L5-T14 final deploy + submit |
-
----
-
-## Project Phases
-
-| Phase | Days | Focus |
-|-------|------|-------|
-| Phase 1 — Foundation & Reporting | 1–5 | Schema, UDFs, views, reports, mid deploy (Day 4) |
-| Phase 2 — Control Flow & Cursors | 6–11 | Temp objects, error handling, cursors |
-| Phase 3 — Deploy & Submit | 12–14 | Full deploy, README, screenshots, GitHub submit |
+| **Hassana** | 1 | `initialize_productionops_schema.sql` | `scripts/setup/` |
+| | 10 | `failed_inspection_queue.sql` | `scripts/tables/` |
+| **Sahashri** | 2 | `inspection_request_registration.sql` | `scripts/tables/` |
+| | 6 | `inspection_batch_processing.sql` | `scripts/temporary_objects/` |
+| **Brain** | 3 | `inspection_result_classification.sql` | `scripts/controlflow/` |
+| | 4 | `monthly_inspection_schedule.sql` | `scripts/controlflow/` |
+| **Parth** | 5 | `error_log.sql` | `scripts/tables/` |
+| | 5 | `inspection_error_logging.sql` | `scripts/errorhandling/` |
+| **Josovo** | 8 | `product_quality_statistics.sql` | `scripts/reporting/` |
+| | 9 | `vProductInspectionSummary.sql` | `scripts/reporting/` |
+| **Lien** | 12 | `product_release_review.sql` | `scripts/tables/` |
+| **Kelvin** | 7 | `inspection_category_management.sql` | `scripts/temporary_objects/` |
+| | 13 | `notification_log.sql` | `scripts/tables/` |
+| | 13 | `inspection_notification_cursor.sql` | `scripts/cursors/` |
+| **Dhruv** | 11 | `failed_product_review_cursor.sql` | `scripts/cursors/` |
+| **Sahil (LAST)** | 14 | `deploy_all.sql` | `scripts/deployment/` |
+| | 14 | `validate_lab5_results.sql` | `scripts/validation/` |
+| | Final | README, screenshots, submit | `README.md` · `screenshots/` |
 
 ---
 
 ## Screenshot Ownership (GitHub Repo)
 
-Each team member captures their own screenshots and pushes them to the **`screenshots/`** folder in the GitHub repo.  
-**Sahil** compiles all 22 into the final submission folder before Day 12.
+Each member uploads screenshots to their folder. **Sahil** compiles all 15 before submission.
 
-### Team — who uploads what
+| # | Name | Screenshot | Task | Upload to |
+|---|------|------------|------|-----------|
+| 1 | **Hassana** | Schema validation | Task 1 | `screenshots/Hassana/` |
+| 2 | **Hassana** | FailedInspectionQueue data | Task 10 | `screenshots/Hassana/` |
+| 3 | **Sahashri** | InspectionRequests data | Task 2 | `screenshots/Sahashri/` |
+| 4 | **Sahashri** | #InspectionBatch output | Task 6 | `screenshots/Sahashri/` |
+| 5 | **Brain** | IF/ELSE classification | Task 3 | `screenshots/Brain/` |
+| 6 | **Brain** | WHILE schedule | Task 4 | `screenshots/Brain/` |
+| 7 | **Parth** | ErrorLog contents | Task 5 | `screenshots/Parth/` |
+| 8 | **Josovo** | Derived table statistics | Task 8 | `screenshots/Josovo/` |
+| 9 | **Josovo** | View output | Task 9 | `screenshots/Josovo/` |
+| 10 | **Lien** | ProductReleaseReview table | Task 12 | `screenshots/Lien/` |
+| 11 | **Kelvin** | @InspectionCategories | Task 7 | `screenshots/Kelvin/` |
+| 12 | **Kelvin** | NotificationLog contents | Task 13 | `screenshots/Kelvin/` |
+| 13 | **Dhruv** | Review cursor execution | Task 11 | `screenshots/Dhruv/` |
+| 14 | **Dhruv** | ProductReleaseReview after cursor | Task 11 | `screenshots/Dhruv/` |
+| 15 | **Sahil** | deploy_all.sql success | Task 14 | `screenshots/Sahil/` |
 
-| # | Name | Screenshot(s) | Task | Upload to |
-|---|------|---------------|------|-----------|
-| 1 | **Hassana** | Schema validation | L4-T1 | `screenshots/Hassana/` |
-| 2 | **Hassana** | InspectionRequests data | L4-T2 | `screenshots/Hassana/` |
-| 3 | **Hassana** | FailedInspectionQueue data | L5-T10 | `screenshots/Hassana/` |
-| 4 | **Sahashri** | JOIN report output | L4-T10 | `screenshots/Sahashri/` |
-| 5 | **Sahashri** | #InspectionBatch temp table | L5-T6 | `screenshots/Sahashri/` |
-| 6 | **Brain** | Scalar UDF test | L4-T3 | `screenshots/Brain/` |
-| 7 | **Brain** | IF...ELSE classification | L5-T3 | `screenshots/Brain/` |
-| 8 | **Brain** | WHILE monthly schedule | L5-T4 | `screenshots/Brain/` |
-| 9 | **Parth** | Stored procedure output | L4-T5 | `screenshots/Parth/` |
-| 10 | **Parth** | ErrorLog contents | L5-T5 | `screenshots/Parth/` |
-| 11 | **Josovo** | vProductInspectionSummary | L4-T6 | `screenshots/Josovo/` |
-| 12 | **Josovo** | CTE quality statistics | L4-T7 | `screenshots/Josovo/` |
-| 13 | **Lien** | TVF output | L4-T4 | `screenshots/Lien/` |
-| 14 | **Lien** | ProductReleaseReview table | L5-T12 | `screenshots/Lien/` |
-| 15 | **Kelvin** | Window function ranking | L4-T8 | `screenshots/Kelvin/` |
-| 16 | **Kelvin** | @InspectionCategories | L5-T7 | `screenshots/Kelvin/` |
-| 17 | **Kelvin** | NotificationLog contents | L5-T13 | `screenshots/Kelvin/` |
-| 18 | **Dhruv** | Subquery report | L4-T9 | `screenshots/Dhruv/` |
-| 19 | **Dhruv** | Review cursor messages | L5-T11 | `screenshots/Dhruv/` |
-| 20 | **Dhruv** | ProductReleaseReview data | L5-T11 | `screenshots/Dhruv/` |
-| 21 | **Sahil** | deploy_lab4.sql success | L4-T12 | `screenshots/Sahil/` |
-| 22 | **Sahil** | deploy_all.sql success | L5-T14 | `screenshots/Sahil/` |
-
-### Push screenshots to GitHub
-
-Each member pushes only their own folder:
+**Team:** Hassana · Sahashri · Brain · Parth · Josovo · Lien · Kelvin · Dhruv · Sahil
 
 ```powershell
 git add screenshots/YourName/
@@ -249,62 +118,66 @@ git commit -m "Add screenshots (YourName)"
 git push
 ```
 
-**All team members:** Hassana · Sahashri · Brain · Parth · Josovo · Lien · Kelvin · Dhruv · Sahil
+---
+
+## Clone & Push (Team Members)
+
+```powershell
+git clone https://github.com/sahilmaniya92/SQL-SERVER-DEVELOPMENT-LAB-5.git
+cd SQL-SERVER-DEVELOPMENT-LAB-5
+git checkout -b feature/yourname-task
+git add scripts/your-folder/your-script.sql
+git commit -m "Task 1: add schema script (Hassana)"
+git push -u origin feature/yourname-task
+```
+
+Open a **Pull Request** → Sahil merges to `main`.
+
+### Push order
+
+| Day | Who pushes first |
+|-----|------------------|
+| 1 | **Hassana** — Task 1 (blocks everyone) |
+| 1–2 | Sahashri, Brain, Parth, Josovo, Lien, Kelvin — Tasks 2–12 |
+| 4 | **Dhruv** — Task 11, then **Kelvin** — Task 13 |
+| 6–7 | **Sahil** — Task 14 deploy + submit (**LAST**) |
 
 ---
 
-Run with **SQLCMD Mode** enabled in SSMS:
+## Deployment (Sahil — Task 14)
 
-| Script | When |
-|--------|------|
-| `scripts/deployment/deploy_lab4.sql` | Day 4 — mid deploy (Phase 1 gate) |
-| `scripts/deployment/deploy_all.sql` | Day 11 — full project deploy |
-| `scripts/validation/validate_lab4_results.sql` | After mid deploy |
-| `scripts/validation/validate_lab5_results.sql` | After full deploy |
+Run with **SQLCMD Mode** in SSMS:
+
+```
+scripts/deployment/deploy_all.sql
+scripts/validation/validate_lab5_results.sql
+```
 
 ---
 
 ## Script Rules
 
 - Every script starts with `USE AdventureWorks2022; GO`
-- All objects in `ProductionOps` schema — never `dbo`
+- All objects in `ProductionOps` schema
 - Scripts must be re-runnable (`IF NOT EXISTS`, `CREATE OR ALTER`)
-- Do **not** edit another member's script file
+- Do not edit another member's script
 
 ---
 
-## Data Mapping
+## Add Collaborators (Repo Owner)
 
-See `TEAM_PROJECT_PLAN.md` and `work_allocated.md` (Simulation4-5 folder) for:
-
-- InspectionRequests mapping (L4-T2)
-- FailedInspectionQueue scoring (L5-T10)
-- ProductReleaseReview decisions (L5-T11 cursor)
-- NotificationLog messages (L5-T13 cursor)
+https://github.com/sahilmaniya92/SQL-SERVER-DEVELOPMENT-LAB-5/settings/access
 
 ---
 
 ## Submission Checklist
 
-- [ ] All 25 scripts in correct folders
-- [ ] `deploy_lab4.sql` runs green (Day 4)
-- [ ] `deploy_all.sql` runs green (Day 11)
-- [ ] 22 screenshots in `screenshots/` (each member's folder uploaded)
-- [ ] Hassana, Sahashri, Brain, Parth, Josovo, Lien, Kelvin, Dhruv, Sahil — all names in README
-- [ ] Data Mapping section in README
+- [ ] All Lab 5 scripts in correct folders
+- [ ] `deploy_all.sql` runs green
+- [ ] 15 screenshots in `screenshots/`
+- [ ] README with all 9 names + student numbers + Data Mapping
 - [ ] Instructor added as GitHub collaborator
 - [ ] Repository link submitted to professor
-
----
-
-## Related Docs
-
-| File | Location | Purpose |
-|------|----------|---------|
-| `TEAM_PROJECT_PLAN.md` | Simulation4-5/ | Full plan + task code glossary |
-| `work_allocated.md` | Simulation4-5/ | Day-by-day work allocation |
-| `CONTRIBUTING.md` | Lab5/ | Git workflow details |
-| `setup_github.ps1` | Lab5/ | One-click push script |
 
 ---
 

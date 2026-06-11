@@ -1,11 +1,11 @@
 # Contributing — Lab 5 Team Workflow
 
-## Who Pushes What
+**Repo:** https://github.com/sahilmaniya92/SQL-SERVER-DEVELOPMENT-LAB-5
 
-Only edit files assigned to you. Do **not** modify another member's scripts.
+## File Ownership
 
-| Member | Task(s) | File(s) to Push | Folder |
-|--------|---------|-----------------|--------|
+| Member | Task(s) | Script File | Folder |
+|--------|---------|-------------|--------|
 | **Hassana** | 1, 10 | `initialize_productionops_schema.sql` | `scripts/setup/` |
 | | | `failed_inspection_queue.sql` | `scripts/tables/` |
 | **Sahashri** | 2, 6 | `inspection_request_registration.sql` | `scripts/tables/` |
@@ -23,73 +23,10 @@ Only edit files assigned to you. Do **not** modify another member's scripts.
 | **Dhruv** | 11 | `failed_product_review_cursor.sql` | `scripts/cursors/` |
 | **Sahil (LAST)** | 14 | `deploy_all.sql` | `scripts/deployment/` |
 | | | `validate_lab5_results.sql` | `scripts/validation/` |
-| | | All screenshots | `screenshots/` |
-| | | Final README updates | `README.md` |
 
----
-
-## Git Workflow
-
-### Option A — Pull Request (Recommended)
-
-```bash
-git checkout main
-git pull
-git checkout -b feature/hassana-task1
-# ... add your files ...
-git add scripts/setup/initialize_productionops_schema.sql
-git commit -m "Task 1: add ProductionOps schema (Hassana)"
-git push -u origin feature/hassana-task1
-```
-
-Open a PR on GitHub → Sahil or team lead reviews → merge to `main`.
-
-### Option B — Direct push to main (Small team)
-
-Only if your instructor allows it. Each member pushes their own files:
-
-```bash
-git pull
-git add scripts/your-folder/your-file.sql
-git commit -m "Task X: description (YourName)"
-git push
-```
-
----
-
-## Dependency Order — When to Push
-
-| Day | Who Pushes First |
-|-----|------------------|
-| Day 1 | **Hassana** — Task 1 (schema) must be merged before anyone else starts |
-| Day 2 | Sahashri, Brain, Parth, Josovo, Lien, Kelvin |
-| Day 4 | **Dhruv** — Task 11 (after Hassana Task 10 + Lien Task 12) |
-| Day 4 | **Kelvin** — Task 13 (after Dhruv Task 11) |
-| Day 6 | **Sahil** — Task 14 deploy + validation (after ALL other tasks merged) |
-
----
-
-## Commit Message Format
+## Commit format
 
 ```
-Task <number>: <short description> (<Your Name>)
+Task 1: add schema script (Hassana)
+Task 11: add review cursor (Dhruv)
 ```
-
-Examples:
-- `Task 1: add ProductionOps schema (Hassana)`
-- `Task 11: add failed product review cursor (Dhruv)`
-- `Task 14: add deploy_all.sql (Sahil)`
-
----
-
-## Adding Collaborators (Repo Owner)
-
-Repo owner runs once after creating the GitHub repo:
-
-```bash
-gh repo edit YOUR_USERNAME/lab5-production-inspection --add-collaborator TEAMMATE_GITHUB_USERNAME
-```
-
-Or: GitHub → Repo → **Settings** → **Collaborators** → **Add people**
-
-Also add your **instructor** as collaborator before submission.

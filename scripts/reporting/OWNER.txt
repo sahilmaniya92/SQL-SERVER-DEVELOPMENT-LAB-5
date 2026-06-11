@@ -1,5 +1,3 @@
 Owners:
-- Josovo: product_quality_statistics.sql (L4-T7)
-- Sahashri: inspection_product_detail_report.sql (L4-T10)
-- Kelvin: product_ranking_report.sql (L4-T8)
-- Dhruv: products_below_safety_stock_report.sql (L4-T9)
+- Josovo: product_quality_statistics.sql (Task 8)
+- Josovo: vProductInspectionSummary.sql (Task 9)

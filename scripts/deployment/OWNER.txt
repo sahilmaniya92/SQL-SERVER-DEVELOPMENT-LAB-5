@@ -1,2 +1,2 @@
-Owner: Sahil (LAST) | L4-T12, L5-T14
-Files: deploy_lab4.sql, deploy_all.sql
+Owner: Sahil (LAST) | Task 14
+File: deploy_all.sql

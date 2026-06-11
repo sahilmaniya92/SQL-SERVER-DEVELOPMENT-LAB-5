@@ -1,2 +1,2 @@
 Owner: Lien
-Screenshots: #13 TVF output, #14 ProductReleaseReview table
+Screenshot: #10 ProductReleaseReview table
