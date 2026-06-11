@@ -1,0 +1,2 @@
+Owner: Sahil (Task 14 — LAST)
+File: validate_lab5_results.sql

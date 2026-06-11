@@ -1,0 +1,27 @@
+# Excel lock files
+~$*.xlsx
+~$*.xlsm
+
+# Python cache
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Secrets — never commit credentials
+.env
+*.env
+credentials.json
+*.pem
+
+# Local SQL Server exports (optional)
+*.bak
+*.ldf
+*.mdf

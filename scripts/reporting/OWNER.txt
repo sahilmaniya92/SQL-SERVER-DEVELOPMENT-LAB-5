@@ -1,0 +1,4 @@
+Owner: Josovo (Tasks 8, 9)
+Files:
+- product_quality_statistics.sql
+- vProductInspectionSummary.sql

@@ -1,0 +1,3 @@
+Owners and files:
+- Sahashri: inspection_batch_processing.sql (Task 6)
+- Kelvin: inspection_category_management.sql (Task 7)

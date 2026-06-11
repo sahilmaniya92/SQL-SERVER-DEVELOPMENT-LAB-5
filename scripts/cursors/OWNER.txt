@@ -1,0 +1,3 @@
+Owners and files:
+- Dhruv: failed_product_review_cursor.sql (Task 11)
+- Kelvin: inspection_notification_cursor.sql (Task 13)

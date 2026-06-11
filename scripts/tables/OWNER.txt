@@ -1,0 +1,6 @@
+Owners and files:
+- Hassana: failed_inspection_queue.sql (Task 10)
+- Sahashri: inspection_request_registration.sql (Task 2)
+- Parth: error_log.sql (Task 5)
+- Lien: product_release_review.sql (Task 12)
+- Kelvin: notification_log.sql (Task 13)
