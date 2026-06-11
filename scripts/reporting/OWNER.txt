@@ -1,4 +1,5 @@
-Owner: Josovo (Tasks 8, 9)
-Files:
-- product_quality_statistics.sql
-- vProductInspectionSummary.sql
+Owners:
+- Josovo: product_quality_statistics.sql (L4-T7)
+- Sahashri: inspection_product_detail_report.sql (L4-T10)
+- Kelvin: product_ranking_report.sql (L4-T8)
+- Dhruv: products_below_safety_stock_report.sql (L4-T9)
