@@ -1,7 +1,3 @@
--- =====================================================
--- Script : inspection_result_classification.sql
--- Purpose: Demonstrate IF...ELSE decision logic
--- =====================================================
 USE AdventureWorks2022;
 GO
 
