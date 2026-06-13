@@ -36,10 +36,10 @@ SQL-SERVER-DEVELOPMENT-LAB-5/
 ├── scripts/
 │   ├── setup/                  ← Hassana (Task 1)
 │   ├── tables/                 ← Hassana, Sahashri, Parth, Lien, Kelvin
-│   ├── controlflow/            ← Brain (Task 3, 4)
+│   ├── controlflow/            ← Brian (Task 3, 4)
 │   ├── errorhandling/          ← Parth (Task 5)
 │   ├── temporary_objects/      ← Sahashri, Kelvin
-│   ├── reporting/              ← Josovo (Task 8, 9)
+│   ├── reporting/              ← Joshua (Task 8, 9)
 │   ├── cursors/                ← Dhruv, Kelvin
 │   ├── deployment/             ← Sahil (LAST)
 │   └── validation/             ← Sahil (LAST)
@@ -98,10 +98,10 @@ Each member uploads screenshots to their folder. **Sahil** compiles all 15 befor
 | 2 | **Hassana** | FailedInspectionQueue data | Task 10 | `screenshots/Hassana/` |
 | 3 | **Sahashri** | InspectionRequests data | Task 2 | `screenshots/Sahashri/` |
 | 4 | **Sahashri** | #InspectionBatch output | Task 6 | `screenshots/Sahashri/` |
-| 5 | **Brian** | IF/ELSE classification | Task 3 | `screenshots/Brain/` |
+| 5 | **Brian** | IF/ELSE classification | Task 3 | `screenshots/Brian/` |
 | 6 | **Brian** | WHILE schedule | Task 4 | `screenshots/Brain/` |
 | 7 | **Parth** | ErrorLog contents | Task 5 | `screenshots/Parth/` |
-| 8 | **Joshua** | Derived table statistics | Task 8 | `screenshots/Josovo/` |
+| 8 | **Joshua** | Derived table statistics | Task 8 | `screenshots/Joshua/` |
 | 9 | **Joshua** | View output | Task 9 | `screenshots/Josovo/` |
 | 10 | **Lien** | ProductReleaseReview table | Task 12 | `screenshots/Lien/` |
 | 11 | **Kelvin** | @InspectionCategories | Task 7 | `screenshots/Kelvin/` |
@@ -138,7 +138,7 @@ Open a **Pull Request** → Sahil merges to `main`.
 | Day | Who pushes first |
 |-----|------------------|
 | 1 | **Hassana** — Task 1 (blocks everyone) |
-| 1–2 | Sahashri, Brian, Parth, Josovo, Lien, Kelvin — Tasks 2–12 |
+| 1–2 | Sahashri, Brian, Parth, Joshua, Lien, Kelvin — Tasks 2–12 |
 | 4 | **Dhruv** — Task 11, then **Kelvin** — Task 13 |
 | 6–7 | **Sahil** — Task 14 deploy + submit (**LAST**) |
 
