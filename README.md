@@ -16,9 +16,9 @@
 |---|------|------|-------------|-------|-------------|
 | 1 | Hassana | Schema & Failed Queue Developer | Task 1, Task 10 | 14 | _TBD_ |
 | 2 | Sahashri | Inspection & Temp Batch Developer | Task 2, Task 6 | 7 | _TBD_ |
-| 3 | Brain | Control Flow Developer | Task 3, Task 4 | 4 | _TBD_ |
+| 3 | Brian | Control Flow Developer | Task 3, Task 4 | 4 | _TBD_ |
 | 4 | Parth | Error Handling Developer | Task 5 | 7 | _TBD_ |
-| 5 | Josovo | Reporting & Views Developer | Task 8, Task 9 | 4 | _TBD_ |
+| 5 | Joshua | Reporting & Views Developer | Task 8, Task 9 | 4 | _TBD_ |
 | 6 | Lien | Release Review Table Developer | Task 12 | 4 | _TBD_ |
 | 7 | Kelvin | Categories & Notification Developer | Task 7, Task 13 | 4 | _TBD_ |
 | 8 | Dhruv | Failed Review Cursor Developer | Task 11 | 7 | _TBD_ |
@@ -47,9 +47,9 @@ SQL-SERVER-DEVELOPMENT-LAB-5/
 ├── screenshots/
 │   ├── Hassana/                ← screenshots #1–2
 │   ├── Sahashri/               ← screenshots #3–4
-│   ├── Brain/                  ← screenshots #5–6
+│   ├── Brian/                  ← screenshots #5–6
 │   ├── Parth/                  ← screenshot #7
-│   ├── Josovo/                 ← screenshots #8–9
+│   ├── Joshua/                 ← screenshots #8–9
 │   ├── Lien/                   ← screenshot #10
 │   ├── Kelvin/                 ← screenshots #11–12
 │   ├── Dhruv/                  ← screenshots #13–14
@@ -71,11 +71,11 @@ SQL-SERVER-DEVELOPMENT-LAB-5/
 | | 10 | `failed_inspection_queue.sql` | `scripts/tables/` |
 | **Sahashri** | 2 | `inspection_request_registration.sql` | `scripts/tables/` |
 | | 6 | `inspection_batch_processing.sql` | `scripts/temporary_objects/` |
-| **Brain** | 3 | `inspection_result_classification.sql` | `scripts/controlflow/` |
+| **Brian** | 3 | `inspection_result_classification.sql` | `scripts/controlflow/` |
 | | 4 | `monthly_inspection_schedule.sql` | `scripts/controlflow/` |
 | **Parth** | 5 | `error_log.sql` | `scripts/tables/` |
 | | 5 | `inspection_error_logging.sql` | `scripts/errorhandling/` |
-| **Josovo** | 8 | `product_quality_statistics.sql` | `scripts/reporting/` |
+| **Joshua** | 8 | `product_quality_statistics.sql` | `scripts/reporting/` |
 | | 9 | `vProductInspectionSummary.sql` | `scripts/reporting/` |
 | **Lien** | 12 | `product_release_review.sql` | `scripts/tables/` |
 | **Kelvin** | 7 | `inspection_category_management.sql` | `scripts/temporary_objects/` |
@@ -98,11 +98,11 @@ Each member uploads screenshots to their folder. **Sahil** compiles all 15 befor
 | 2 | **Hassana** | FailedInspectionQueue data | Task 10 | `screenshots/Hassana/` |
 | 3 | **Sahashri** | InspectionRequests data | Task 2 | `screenshots/Sahashri/` |
 | 4 | **Sahashri** | #InspectionBatch output | Task 6 | `screenshots/Sahashri/` |
-| 5 | **Brain** | IF/ELSE classification | Task 3 | `screenshots/Brain/` |
-| 6 | **Brain** | WHILE schedule | Task 4 | `screenshots/Brain/` |
+| 5 | **Brian** | IF/ELSE classification | Task 3 | `screenshots/Brain/` |
+| 6 | **Brian** | WHILE schedule | Task 4 | `screenshots/Brain/` |
 | 7 | **Parth** | ErrorLog contents | Task 5 | `screenshots/Parth/` |
-| 8 | **Josovo** | Derived table statistics | Task 8 | `screenshots/Josovo/` |
-| 9 | **Josovo** | View output | Task 9 | `screenshots/Josovo/` |
+| 8 | **Joshua** | Derived table statistics | Task 8 | `screenshots/Josovo/` |
+| 9 | **Joshua** | View output | Task 9 | `screenshots/Josovo/` |
 | 10 | **Lien** | ProductReleaseReview table | Task 12 | `screenshots/Lien/` |
 | 11 | **Kelvin** | @InspectionCategories | Task 7 | `screenshots/Kelvin/` |
 | 12 | **Kelvin** | NotificationLog contents | Task 13 | `screenshots/Kelvin/` |
@@ -110,7 +110,7 @@ Each member uploads screenshots to their folder. **Sahil** compiles all 15 befor
 | 14 | **Dhruv** | ProductReleaseReview after cursor | Task 11 | `screenshots/Dhruv/` |
 | 15 | **Sahil** | deploy_all.sql success | Task 14 | `screenshots/Sahil/` |
 
-**Team:** Hassana · Sahashri · Brain · Parth · Josovo · Lien · Kelvin · Dhruv · Sahil
+**Team:** Hassana · Sahashri · Brian · Parth · Joshua · Lien · Kelvin · Dhruv · Sahil
 
 ```powershell
 git add screenshots/YourName/
@@ -138,7 +138,7 @@ Open a **Pull Request** → Sahil merges to `main`.
 | Day | Who pushes first |
 |-----|------------------|
 | 1 | **Hassana** — Task 1 (blocks everyone) |
-| 1–2 | Sahashri, Brain, Parth, Josovo, Lien, Kelvin — Tasks 2–12 |
+| 1–2 | Sahashri, Brian, Parth, Josovo, Lien, Kelvin — Tasks 2–12 |
 | 4 | **Dhruv** — Task 11, then **Kelvin** — Task 13 |
 | 6–7 | **Sahil** — Task 14 deploy + submit (**LAST**) |
 
