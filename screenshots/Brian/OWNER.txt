@@ -1,2 +1,0 @@
-Owner: Brain
-Screenshots: #5 IF/ELSE classification, #6 WHILE schedule
