@@ -99,10 +99,10 @@ Each member uploads screenshots to their folder. **Sahil** compiles all 15 befor
 | 3 | **Sahashri** | InspectionRequests data | Task 2 | `screenshots/Sahashri/` |
 | 4 | **Sahashri** | #InspectionBatch output | Task 6 | `screenshots/Sahashri/` |
 | 5 | **Brian** | IF/ELSE classification | Task 3 | `screenshots/Brian/` |
-| 6 | **Brian** | WHILE schedule | Task 4 | `screenshots/Brain/` |
+| 6 | **Brian** | WHILE schedule | Task 4 | `screenshots/Brian/` |
 | 7 | **Parth** | ErrorLog contents | Task 5 | `screenshots/Parth/` |
 | 8 | **Joshua** | Derived table statistics | Task 8 | `screenshots/Joshua/` |
-| 9 | **Joshua** | View output | Task 9 | `screenshots/Josovo/` |
+| 9 | **Joshua** | View output | Task 9 | `screenshots/Joshua/` |
 | 10 | **Lien** | ProductReleaseReview table | Task 12 | `screenshots/Lien/` |
 | 11 | **Kelvin** | @InspectionCategories | Task 7 | `screenshots/Kelvin/` |
 | 12 | **Kelvin** | NotificationLog contents | Task 13 | `screenshots/Kelvin/` |

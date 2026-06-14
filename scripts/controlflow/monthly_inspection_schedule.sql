@@ -1,7 +1,3 @@
--- =====================================================
--- Script : monthly_inspection_schedule.sql
--- Purpose: Generate 12‑month inspection schedule using WHILE
--- =====================================================
 USE AdventureWorks2022;
 GO
 
