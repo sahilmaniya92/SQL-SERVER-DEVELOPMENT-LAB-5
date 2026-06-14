@@ -1,2 +1,0 @@
-Owner: Kelvin
-Screenshots: #11 @InspectionCategories, #12 NotificationLog contents
