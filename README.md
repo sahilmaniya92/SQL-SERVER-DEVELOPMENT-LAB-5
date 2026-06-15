@@ -22,7 +22,7 @@
 | 6 | Lien | Release Review Table Developer | Task 12 | 4 | _TBD_ |
 | 7 | Kelvin | Categories & Notification Developer | Task 7, Task 13 | 4 | _TBD_ |
 | 8 | Dhruv | Failed Review Cursor Developer | Task 11 | 7 | _TBD_ |
-| 9 | Sahil | Deployment & Final Submission (**LAST**) | Task 14 | 7 | _TBD_ |
+| 9 | Sahil | Deployment & Final Submission (**LAST**) | Task 14 | 7 | N01769967 |
 
 > Each task is owned by **one person only**. Sahil owns the **LAST task** (Task 14 + final submission).
 
