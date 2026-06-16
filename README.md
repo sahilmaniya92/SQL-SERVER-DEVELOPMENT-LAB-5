@@ -20,7 +20,7 @@
 | 4 | Parth | Error Handling Developer | Task 5 | 7 | N01779255 |
 | 5 | Joshua | Reporting & Views Developer | Task 8, Task 9 | 4 | N01606998 |
 | 6 | Lien | Release Review Table Developer | Task 12 | 4 | _TBD_ |
-| 7 | Kelvin | Categories & Notification Developer | Task 7, Task 13 | 4 | _TBD_ |
+| 7 | Kelvin | Categories & Notification Developer | Task 7, Task 13 | 4 | N01777723 |
 | 8 | Dhruv | Failed Review Cursor Developer | Task 11 | 7 | _TBD_ |
 | 9 | Sahil | Deployment & Final Submission (**LAST**) | Task 14 | 7 | N01769967 |
 
