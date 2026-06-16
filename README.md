@@ -18,7 +18,7 @@
 | 2 | Sahashri | Inspection & Temp Batch Developer | Task 2, Task 6 | 7 | _TBD_ |
 | 3 | Brian | Control Flow Developer | Task 3, Task 4 | 4 | _TBD_ |
 | 4 | Parth | Error Handling Developer | Task 5 | 7 | N01779255 |
-| 5 | Joshua | Reporting & Views Developer | Task 8, Task 9 | 4 | _TBD_ |
+| 5 | Joshua | Reporting & Views Developer | Task 8, Task 9 | 4 | N01606998 |
 | 6 | Lien | Release Review Table Developer | Task 12 | 4 | _TBD_ |
 | 7 | Kelvin | Categories & Notification Developer | Task 7, Task 13 | 4 | _TBD_ |
 | 8 | Dhruv | Failed Review Cursor Developer | Task 11 | 7 | _TBD_ |
