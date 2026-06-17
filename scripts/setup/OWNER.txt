@@ -1,2 +1,0 @@
-Owner: Hassana (Task 1)
-File: initialize_productionops_schema.sql

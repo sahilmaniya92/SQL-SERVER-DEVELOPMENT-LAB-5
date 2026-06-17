@@ -1,2 +1,0 @@
-Owner: Sahil (LAST) | Task 14
-File: deploy_all.sql

@@ -1,2 +1,0 @@
-Owner: Parth (Task 5)
-File: inspection_error_logging.sql

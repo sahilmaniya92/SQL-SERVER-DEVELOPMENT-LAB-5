@@ -1,3 +1,0 @@
-Owners:
-- Josovo: product_quality_statistics.sql (Task 8)
-- Josovo: vProductInspectionSummary.sql (Task 9)

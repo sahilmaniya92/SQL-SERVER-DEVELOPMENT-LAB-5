@@ -1,22 +1,22 @@
--- Task 6 — inspection_batch_processing.sql
+/*
+    Lab 5 - Task 6
+    Script: inspection_batch_processing.sql
+    Purpose: Demonstrate local temporary table for inspection batch processing
+*/
 
 USE AdventureWorks2022;
 GO
-
-/*=========================================================
-  Temporary Inspection Batch Processing
-=========================================================*/
 
 IF OBJECT_ID('tempdb..#InspectionBatch') IS NOT NULL
     DROP TABLE #InspectionBatch;
 
 CREATE TABLE #InspectionBatch
 (
-    ProductID INT,
-    ProductName NVARCHAR(200),
-    ProductNumber NVARCHAR(25),
-    ListPrice MONEY,
-    SafetyStockLevel SMALLINT
+    ProductID         INT,
+    ProductName       NVARCHAR(200),
+    ProductNumber     NVARCHAR(25),
+    ListPrice         MONEY,
+    SafetyStockLevel  SMALLINT
 );
 
 INSERT INTO #InspectionBatch
@@ -28,16 +28,18 @@ INSERT INTO #InspectionBatch
     SafetyStockLevel
 )
 SELECT
-    ProductID,
-    Name,
-    ProductNumber,
-    ListPrice,
-    SafetyStockLevel
-FROM Production.Product
-WHERE
-    ListPrice > 1000
-    OR SafetyStockLevel < 500;
+    p.ProductID,
+    p.Name,
+    p.ProductNumber,
+    p.ListPrice,
+    p.SafetyStockLevel
+FROM Production.Product AS p
+WHERE p.ListPrice > 1000
+   OR p.SafetyStockLevel < 500;
 
+PRINT CAST(@@ROWCOUNT AS NVARCHAR(10)) + ' product(s) loaded into #InspectionBatch.';
+
+-- Required output
 SELECT *
 FROM #InspectionBatch
 ORDER BY ListPrice DESC;

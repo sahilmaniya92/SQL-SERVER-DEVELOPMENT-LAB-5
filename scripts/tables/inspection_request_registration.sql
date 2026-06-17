@@ -1,34 +1,39 @@
--- Task 2 — inspection_request_registration.sql
+/*
+    Lab 5 - Task 2
+    Script: inspection_request_registration.sql
+    Purpose: Create and populate ProductionOps.InspectionRequests
+*/
 
 USE AdventureWorks2022;
 GO
-
-/*=========================================================
-  ProductionOps.InspectionRequests
-  Creates table and loads inspection request data
-=========================================================*/
 
 IF OBJECT_ID('ProductionOps.InspectionRequests', 'U') IS NULL
 BEGIN
     CREATE TABLE ProductionOps.InspectionRequests
     (
-        InspectionRequestID INT IDENTITY(1,1) PRIMARY KEY,
-        ProductID INT NOT NULL,
-        RequestDate DATETIME NOT NULL,
-        RequestedBy NVARCHAR(100) NOT NULL,
-        InspectionType NVARCHAR(100) NOT NULL,
-        Status NVARCHAR(50) NOT NULL
+        InspectionRequestID INT           NOT NULL IDENTITY(1, 1),
+        ProductID           INT           NOT NULL,
+        RequestDate         DATETIME      NOT NULL,
+        RequestedBy         NVARCHAR(100) NOT NULL,
+        InspectionType      NVARCHAR(100) NOT NULL,
+        Status              NVARCHAR(50)  NOT NULL,
+        CONSTRAINT PK_InspectionRequests PRIMARY KEY (InspectionRequestID)
     );
-END;
+
+    PRINT 'ProductionOps.InspectionRequests table created successfully.';
+END
+ELSE
+BEGIN
+    PRINT 'ProductionOps.InspectionRequests table already exists.';
+END
 GO
 
-IF NOT EXISTS
-(
+-- Insert lab data only when table is empty (re-runnable)
+IF NOT EXISTS (
     SELECT 1
     FROM ProductionOps.InspectionRequests
 )
 BEGIN
-
     INSERT INTO ProductionOps.InspectionRequests
     (
         ProductID,
@@ -37,44 +42,39 @@ BEGIN
         InspectionType,
         Status
     )
-    SELECT TOP 10
-        ProductID,
+    SELECT TOP (12)
+        p.ProductID,
         GETDATE(),
-
-        'Supervisor A',
-
+        CASE (p.ProductID % 4)
+            WHEN 0 THEN 'Supervisor A'
+            WHEN 1 THEN 'Supervisor B'
+            WHEN 2 THEN 'Supervisor C'
+            ELSE 'Supervisor D'
+        END AS RequestedBy,
         CASE
-            WHEN ListPrice > 2000
-                THEN 'Performance Inspection'
-
-            WHEN SafetyStockLevel < 500
-                THEN 'Safety Inspection'
-
-            WHEN MakeFlag = 1
-                THEN 'Assembly Inspection'
-
+            WHEN p.ListPrice > 2000 THEN 'Performance Inspection'
+            WHEN p.SafetyStockLevel < 500 THEN 'Safety Inspection'
+            WHEN p.MakeFlag = 1 THEN 'Assembly Inspection'
             ELSE 'Final Release Inspection'
-        END,
-
+        END AS InspectionType,
         CASE
-            WHEN SafetyStockLevel < 500
-                THEN 'Pending'
-
-            WHEN ListPrice > 1000
-                THEN 'Scheduled'
-
+            WHEN p.SafetyStockLevel < 500 THEN 'Pending'
+            WHEN p.ListPrice > 1000 THEN 'Scheduled'
             ELSE 'Completed'
-        END
+        END AS Status
+    FROM Production.Product AS p
+    ORDER BY p.ProductID;
 
-    FROM Production.Product
-    ORDER BY ProductID;
-
-END;
+    PRINT CAST(@@ROWCOUNT AS NVARCHAR(10)) + ' inspection request(s) inserted.';
+END
+ELSE
+BEGIN
+    PRINT 'InspectionRequests already contains data. Skipping insert.';
+END
 GO
 
+-- Validation output
 SELECT *
 FROM ProductionOps.InspectionRequests
 ORDER BY InspectionRequestID;
 GO
-
-

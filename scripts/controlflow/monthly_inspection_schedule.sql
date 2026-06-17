@@ -1,19 +1,34 @@
+/*
+    Lab 5 - Task 4
+    Script: monthly_inspection_schedule.sql
+    Purpose: Generate monthly inspection schedule using WHILE loop
+*/
+
 USE AdventureWorks2022;
 GO
 
-DECLARE @InspectionSchedule TABLE (
+DECLARE @MonthNumber INT = 1;
+
+DECLARE @InspectionSchedule TABLE
+(
     MonthNumber INT,
-    MonthName   NVARCHAR(20)
+    MonthName NVARCHAR(20)
 );
 
-DECLARE @CurrentMonth INT = 1;
-WHILE @CurrentMonth <= 12
+WHILE @MonthNumber <= 12
 BEGIN
     INSERT INTO @InspectionSchedule (MonthNumber, MonthName)
-    VALUES (@CurrentMonth, DATENAME(MONTH, DATEFROMPARTS(2000, @CurrentMonth, 1)));
-    SET @CurrentMonth = @CurrentMonth + 1;
+    VALUES
+    (
+        @MonthNumber,
+        DATENAME(MONTH, DATEFROMPARTS(2026, @MonthNumber, 1))
+    );
+
+    SET @MonthNumber = @MonthNumber + 1;
 END
 
-SELECT * FROM @InspectionSchedule ORDER BY MonthNumber;
-PRINT 'Monthly inspection schedule generated.';
+-- Required output
+SELECT *
+FROM @InspectionSchedule
+ORDER BY MonthNumber;
 GO

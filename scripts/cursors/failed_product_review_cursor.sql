@@ -23,6 +23,13 @@ FROM ProductionOps.FailedInspectionQueue AS fiq
 INNER JOIN Production.Product AS p
     ON fiq.ProductID = p.ProductID
 WHERE fiq.ProcessingStatus = 'Pending'
+  AND NOT EXISTS
+  (
+      SELECT 1
+      FROM ProductionOps.ProductReleaseReview AS prr
+      WHERE prr.ProductID = fiq.ProductID
+        AND prr.InspectionScore = fiq.InspectionScore
+  )
 ORDER BY fiq.QueueID;
 
 OPEN failed_inspection_cursor;

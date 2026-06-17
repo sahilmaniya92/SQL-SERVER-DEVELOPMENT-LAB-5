@@ -1,8 +1,9 @@
--- =============================================
--- Script : inspection_error_logging.sql
--- Purpose: Demonstrate TRY...CATCH error handling
--- Owner  : Parth (Task 5)
--- =============================================
+/*
+    Lab 5 - Task 5
+    Script: inspection_error_logging.sql
+    Purpose: Demonstrate TRY...CATCH error handling and logging
+*/
+
 USE AdventureWorks2022;
 GO
 
@@ -11,7 +12,8 @@ BEGIN TRY
     SELECT 1 / 0;
 END TRY
 BEGIN CATCH
-    INSERT INTO ProductionOps.ErrorLog (
+    INSERT INTO ProductionOps.ErrorLog
+    (
         ErrorDate,
         ErrorNumber,
         ErrorSeverity,
@@ -19,7 +21,8 @@ BEGIN CATCH
         ErrorLine,
         ErrorMessage
     )
-    VALUES (
+    VALUES
+    (
         GETDATE(),
         ERROR_NUMBER(),
         ERROR_SEVERITY(),
@@ -29,10 +32,10 @@ BEGIN CATCH
     );
 
     PRINT 'Runtime error captured and logged to ProductionOps.ErrorLog.';
-END CATCH;
+END CATCH
 GO
 
--- Validation: display captured error details
+-- Validation output
 SELECT *
 FROM ProductionOps.ErrorLog
 ORDER BY ErrorLogID DESC;

@@ -1,50 +1,73 @@
+/*
+    Lab 5 - Task 3
+    Script: inspection_result_classification.sql
+    Purpose: Demonstrate IF...ELSE inspection decision logic
+*/
+
 USE AdventureWorks2022;
 GO
 
--- Test 1: Score 95 (Approved)
-DECLARE @ProductID INT = 1;
-DECLARE @InspectionScore INT = 95;
+DECLARE @ProductID INT;
+DECLARE @InspectionScore INT;
 DECLARE @InspectionResult NVARCHAR(50);
 
-IF @InspectionScore >= 90
+-- Create table variable to store test results
+DECLARE @ClassificationResults TABLE
+(
+    ProductID INT,
+    InspectionScore INT,
+    InspectionResult NVARCHAR(50)
+);
+
+-- Test Case 1: Approved (score 95)
+SET @ProductID = 707;
+SET @InspectionScore = 95;
+SET @InspectionResult = NULL;
+
+IF @InspectionScore BETWEEN 90 AND 100
     SET @InspectionResult = 'Approved';
-ELSE IF @InspectionScore >= 70
+ELSE IF @InspectionScore BETWEEN 70 AND 89
     SET @InspectionResult = 'Conditional Approval';
 ELSE
     SET @InspectionResult = 'Failed';
 
-SELECT @ProductID AS ProductID, @InspectionScore AS InspectionScore, @InspectionResult AS InspectionResult;
-PRINT 'Test 1 completed.';
-GO
+INSERT INTO @ClassificationResults (ProductID, InspectionScore, InspectionResult)
+VALUES (@ProductID, @InspectionScore, @InspectionResult);
 
--- Test 2: Score 78 (Conditional Approval)
-DECLARE @ProductID INT = 2;
-DECLARE @InspectionScore INT = 78;
-DECLARE @InspectionResult NVARCHAR(50);
+-- Test Case 2: Conditional Approval (score 78)
+SET @ProductID = 708;
+SET @InspectionScore = 78;
+SET @InspectionResult = NULL;
 
-IF @InspectionScore >= 90
+IF @InspectionScore BETWEEN 90 AND 100
     SET @InspectionResult = 'Approved';
-ELSE IF @InspectionScore >= 70
+ELSE IF @InspectionScore BETWEEN 70 AND 89
     SET @InspectionResult = 'Conditional Approval';
 ELSE
     SET @InspectionResult = 'Failed';
 
-SELECT @ProductID AS ProductID, @InspectionScore AS InspectionScore, @InspectionResult AS InspectionResult;
-PRINT 'Test 2 completed.';
-GO
+INSERT INTO @ClassificationResults (ProductID, InspectionScore, InspectionResult)
+VALUES (@ProductID, @InspectionScore, @InspectionResult);
 
--- Test 3: Score 45 (Failed)
-DECLARE @ProductID INT = 3;
-DECLARE @InspectionScore INT = 45;
-DECLARE @InspectionResult NVARCHAR(50);
+-- Test Case 3: Failed (score 45)
+SET @ProductID = 709;
+SET @InspectionScore = 45;
+SET @InspectionResult = NULL;
 
-IF @InspectionScore >= 90
+IF @InspectionScore BETWEEN 90 AND 100
     SET @InspectionResult = 'Approved';
-ELSE IF @InspectionScore >= 70
+ELSE IF @InspectionScore BETWEEN 70 AND 89
     SET @InspectionResult = 'Conditional Approval';
 ELSE
     SET @InspectionResult = 'Failed';
 
-SELECT @ProductID AS ProductID, @InspectionScore AS InspectionScore, @InspectionResult AS InspectionResult;
-PRINT 'Test 3 completed.';
+INSERT INTO @ClassificationResults (ProductID, InspectionScore, InspectionResult)
+VALUES (@ProductID, @InspectionScore, @InspectionResult);
+
+-- Required output
+SELECT
+    ProductID,
+    InspectionScore,
+    InspectionResult
+FROM @ClassificationResults;
 GO
