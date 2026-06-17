@@ -164,11 +164,7 @@ scripts/validation/validate_lab5_results.sql
 
 ---
 
-## Add Collaborators (Repo Owner)
 
-https://github.com/sahilmaniya92/SQL-SERVER-DEVELOPMENT-LAB-5/settings/access
-
----
 
 ## Submission Checklist
 
